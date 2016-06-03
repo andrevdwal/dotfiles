@@ -1,11 +1,14 @@
 # GO
 export GOOS=linux
-export GOARC=amd64
+export GOARCH=amd64
 export GOBIN=$HOME/dev/go/bin
 export GOPATH=$HOME/dev/go
 export GOROOTBIN=/usr/local/go/bin
 
 export PATH=$PATH:$GOBIN:$GOROOTBIN
+
+# Git Aliases
+alias gitpd='for d in $(find $PWD -name ".git"); do cd $d && cd .. && echo $PWD && git pull; done'
 
 # GO Aliases
 alias goim='for d in $(go list -f {{.Dir}} ./...); do goimports -w $d/*.go; done'
